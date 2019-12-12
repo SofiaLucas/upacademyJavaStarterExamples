@@ -31,9 +31,7 @@ public class Desafio {
 		
 		int [] arr= finalArray.stream().mapToInt(Integer::parseInt).toArray();
 		System.out.println(finalArray);
-//		Integer.parseInt(finalArray);
-//
-//		return finalArray;
+
 		return arr;
 		}
 	}
