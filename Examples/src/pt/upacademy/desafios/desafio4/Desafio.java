@@ -14,6 +14,13 @@ public class Desafio {
 
 		List<String> finalArray = new ArrayList<String>();
 
+		if (string.equals("")) {
+			int[] emptyArr= {};
+			return emptyArr;
+			
+		}
+		
+		else {
 		for (int i = 0; i < newString.length; i++) {
 
 			if (newString[i].matches("^[0-9]*$")) {
@@ -21,11 +28,14 @@ public class Desafio {
 			}
 		}
 
+		
+		int [] arr= finalArray.stream().mapToInt(Integer::parseInt).toArray();
 		System.out.println(finalArray);
 //		Integer.parseInt(finalArray);
 //
 //		return finalArray;
-		return null;
+		return arr;
+		}
 	}
 
 }
