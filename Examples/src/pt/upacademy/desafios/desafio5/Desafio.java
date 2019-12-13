@@ -1,24 +1,22 @@
 package pt.upacademy.desafios.desafio5;
 
-
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class Desafio {
 
-	public static int countDays(String string, String string2) {
-		
-		
-		//SimpleDateFormat formatter = new SimpleDateFormat("dd MM yyyy");
-		LocalDate dateInit = LocalDate.parse(string);
-		LocalDate dateFin = LocalDate.parse(string2);
-		//System.out.println(dateInit);
-		//SimpleDateFormat.parse(string);
-		
-		int noDays;
-		noDays= Period.until(dateInit, dateFin);
-		return 0;
+	public static long countDays(String string, String string2) {
+
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy");
+		LocalDate dateInit = LocalDate.parse(string, formatter);
+		LocalDate dateFin = LocalDate.parse(string2, formatter);
+
+		long noDays;
+
+		noDays = dateInit.until(dateFin, ChronoUnit.DAYS);
+
+		return noDays;
 	}
 
 }
